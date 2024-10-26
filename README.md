@@ -1,2 +1,2 @@
 # tray
-poggit yaml config source genarator
+poggit manifest source genarator
