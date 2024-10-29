@@ -7,7 +7,9 @@ Branch = 0
 LastBranch = 0
 ProjectName = 0
 Icon = 0
-Libs = []
+LibNameLs = []
+LibSrcLs = []
+LibVerLs = []
 LibName = 0
 LastLib = 0
 TimesLoopedBuildLibs = 0
@@ -39,9 +41,9 @@ if LibsTrue == "yes":
         LibName = input("enter a lib: ")
         LibSrc = input("enter the LibSrc: ")
         LibVer = input("enter the LibVer: ")
-        Libs.append(LibName)
-        Libs.append(LibSrc)
-        Libs.append(LibVer)
+        LibNameLs.append(LibName)
+        LibSrcLs.append(LibSrc)
+        LibVerLs.append(LibVer)
         LastLib = input("is that the last lib? [yes/no]: ")
         if LastLib == "yes":
             print("okay!")
@@ -70,16 +72,9 @@ f.write("    icon: {icon}")
 if LibsTrue == "yes":
     print(Libs)
     f.write("    libs:")
-    while TimesLoopedBuildLibs < len(Libs):
-        # Check if there are enough elements remaining
-        if TimesLoopedBuildLibs < len(Libs):
-            f.write(f"    - {Libs[TimesLoopedBuildLibs]}\n")
-        if TimesLoopedBuildLibs + 1 < len(Libs):
-            f.write(f"      - {Libs[TimesLoopedBuildLibs + 1]}\n")
-        if TimesLoopedBuildLibs + 2 < len(Libs):
-            f.write(f"      - {Libs[TimesLoopedBuildLibs + 2]}\n")
-    
-    TimesLoopedBuildLibs += 3
-
-# write the end
-f.write("...")
+    for TimesLoopedBuildLibs in range(len(LibNameLs)):
+        f.write(f"    - {LibNameLs[TimesLoopedBuildLibs]}")
+        f.write(f"      - {LibSrcLs[TimesLoopedBuildLibs]}")
+        f.write(f"      - {LibVerLs[TimesLoopedBuildLibs]}")
+# end
+print("done")
