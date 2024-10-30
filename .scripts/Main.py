@@ -67,10 +67,10 @@ f.write("projects:")
 f.write(f"  {ProjectName}:")
 # Build the project icons
 f.write("    paths: ''")
-f.write("    icon: {icon}")
+f.write(f"    icon: {Icon}")
 # Build the libs
 if LibsTrue == "yes":
-    print(Libs)
+    print(LibNameLs)
     f.write("    libs:")
     for TimesLoopedBuildLibs in range(len(LibNameLs)):
         f.write(f"    - {LibNameLs[TimesLoopedBuildLibs]}")
