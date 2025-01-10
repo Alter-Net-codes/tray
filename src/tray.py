@@ -15,7 +15,7 @@ LastLib = 0
 TimesLoopedBuildLibs = 0
 
 # intro
-print("please run this on a linux machine to build a poggit file.")
+print("Welcome to tray.")
 
 # get branches
 while True:
