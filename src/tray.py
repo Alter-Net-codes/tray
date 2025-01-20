@@ -1,5 +1,7 @@
 # imports
 import os
+import time
+import sys
 
 # vars
 Branches = []
@@ -77,4 +79,5 @@ if LibsTrue == "yes":
         f.write(f"      - {LibSrcLs[TimesLoopedBuildLibs]}")
         f.write(f"      - {LibVerLs[TimesLoopedBuildLibs]}")
 # end
-print("done")
+time.sleep(2)
+sys.exit()
